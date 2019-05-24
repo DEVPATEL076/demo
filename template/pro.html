@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>full_name</th>
+        <th>gender</th>
+        <th>birth_date</th>
+        <th>email</th>
+        <th>contact_no</th>
+        <th>Address</th>
+        <th>nationality</th>
+        <th>occupation</th>
+        <th>picture</th>
+        <th>Update</th>
+        <th>dalete</th>
+        <!-- <th>password1</th> -->
+    </tr>
+    {% for item in results %}
+    <tr style="color: black;"> 
+        <td>{{ item.id }}</td>
+        <td>{{ item.full_name }}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.birth_date }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.contact_no }}</td>
+        <td>{{ item.Address }}</td>
+        <td>{{ item.nationality }}</td>
+        <td>{{ item.occupation }}</td>
+        <td><img src="/media/{{ item.picture }}" style="width: 90px;"></img></td>
+        <!-- <td>{{ item.password }}</td> -->
+         <td><a href="{% url "user_edit" item.id %}"><button type="button" class="btn btn-outline-secondary btn-sm">Edit</button></a></td>
+         <td><a href="{% url "user_delete" item.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
