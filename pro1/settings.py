@@ -70,6 +70,7 @@ DATABASES = {
     #     'USER':'Dev1',
     #     'PASSWORD':'devpatel1'
     # }
+    }
 }
 
 
